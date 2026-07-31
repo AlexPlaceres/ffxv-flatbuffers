@@ -1,0 +1,789 @@
+namespace Black.Motion.LmAnimation.CustomData;
+
+table ACTIVATE_REMOTE_EVENT {
+	field_0:uint32 = 0;
+	field_1:uint32 = 0; // offset to something?
+	event_id:uint32 = 0;
+	field_3:uint32 = 0;
+}
+
+table ACTIVATE_REMOTE_EVENT_DURATION {
+	field_0:uint32 = 0;
+	field_1:uint32 = 0;
+}
+
+table ADD_DIRTY {
+	dirty:bool = true;
+}
+
+table ALG_INTERVAL {
+	/* EMPTY TABLE */
+}
+
+table ADD_JC_GAUGE_LEVEL {}
+
+table ALLOW_PUSH_RANGE {
+	unknown:uint32 = 0;
+}
+
+table ALTERNA {
+	/* EMPTY TABLE */
+}
+
+table AMMO_RELOAD {
+	field_0:uint32 = 0;
+	field_1:uint32 = 0;
+}
+
+table ARMEDFORM_HIDE {}
+
+table ARMEDFORM_WEAPON_SET_POSITION {
+	field_0:uint8 = 0;
+}
+
+table ARMEDFORM_WEAPON_SET_VISIBLE {
+	unknown_0:uint32 = 0;
+	weapon_0:bool = true;
+	weapon_1:bool = true;
+	weapon_2:bool = true;
+	weapon_3:bool = true;
+	weapon_4:bool = true;
+	weapon_5:bool = true;
+	weapon_6:bool = true;
+	weapon_7:bool = true;
+	weapon_8:bool = true;
+	weapon_9:bool = true;
+	weapon_10:bool = true;
+	weapon_11:bool = true;
+	weapon_12:bool = true;
+}
+
+table ATTACHED_TARGET {
+	/* EMPTY TABLE */
+}
+
+table ATTACH_MODEL_VISIBLE {
+	field_0:uint32 = 0;
+	field_1:uint32 = 0;
+	field_2:uint32 = 0;
+	field_3:uint32 = 0;
+}
+
+table ATTACH_TARGET {
+	// Unfinished
+	field_0:uint32;
+	field_1:float = 0.0;
+	offset_z:float = 0.0;
+	rot_y:float = 0.0;
+}
+
+table AVATAR_BARRIER {
+	/* EMPTY TABLE */
+}
+
+table BG_COLLISION {
+	field_0:bool = true;
+}
+
+table BG_COLLISION_DURATION {
+	field_0:bool = true;
+}
+
+table BODYDRIVER_DISABLE_IN_CAR_COLLISION_RANGED {
+	/* EMPTY TABLE */
+}
+
+table BODYDRIVER_FIX_PART {
+	/* EMPTY TABLE */
+}
+
+table BODYDRIVER_FIX_PART_RANGED {
+	field_0:uint32 = 0;
+}
+
+table BODYDRIVER_FIX_PART_TO_FIXID {
+	field_0:bool = true;
+	field_1:uint32 = 0;
+	field_2:uint32 = 0;
+}
+
+table BODYDRIVER_FIX_PART_TO_FIXID_RANGED {
+	field_0:uint32 = 0;
+}
+
+table BODYDRIVER_MODIFY_TRACKING_STRENGTH {
+	/* EMPTY TABLE */
+}
+
+table BODYDRIVER_SET_TUNING_RANGED {
+	/* EMPTY TABLE */
+}
+
+table BONAMIK_ABSOLUTE_INNERCONE_STR_RANGE {
+	/* EMPTY TABLE */
+}
+
+table BONAMIK_ADDMASS_RANGE {
+	/* EMPTY TABLE */
+}
+
+table BONAMIK_ANIMATIONBLEND_RANGE {
+	field_0:uint32 = 0;
+	field_1:[uint32];
+	field_2:[uint32];
+	field_3:uint32 = 0;
+	field_4:uint32 = 0;
+	field_5:bool = false;
+}
+
+table BONAMIK_CHANGE_WIND_PRESET {
+	id:uint32 = 0;
+}
+
+table BONAMIK_CONTROL_ADDMASS {
+	field_0:uint32 = 0; // unknown
+	field_1:[float];
+}
+
+// [Tangent] See SQEX::Luminous::Bonamik::BonamikInstance::GetGroupName to find some default group names
+table BONAMIK_CONTROL_ANIMATION_BLEND {
+	coeff:float = 0.0;
+	blend_frames:uint32 = 0;
+	select_group:[uint32];
+	accurate_mode:bool = false;
+}
+
+table BONAMIK_CONTROL_DYN2KNM {}
+
+table BONAMIK_CONTROL_GROUND {
+	field_0:[uint32];
+}
+
+table BONAMIK_CONTROL_KNM2DYN {
+	field_0:[uint32];
+}
+
+table BONAMIK_CONTROL_LOCALFORCE_SCALE {
+	val:float = 1.0;
+	blend_frames:uint32 = 0;
+	select_group:[uint32];
+}
+
+table BONAMIK_CONTROL_PREROLL {
+	pre_roll:uint32_t = 10;
+}
+
+table BONAMIK_CONTROL_RESET {
+	field_0:bool = true;
+}
+
+table BONAMIK_CONTROL_RESTORE_PARAMS {}
+
+table BONAMIK_CONTROL_SIMULATION {
+	field_0:uint32 = 0;
+	field_1:[uint32];
+}
+
+table BONAMIK_CONTROL_UNEUNE {
+	field_0:[uint32];
+}
+
+table BONAMIK_CONTROL_UNEUNE_SCALE {
+	y_scale:float = 1.0;
+	z_scale:float = 1.0;
+	speed_scale:float = 1.0;
+	select_group:[uint32];
+}
+
+table BONAMIK_CONTROL_WIND_SCALE {}
+
+table BONAMIK_DYNAMIC2KINEMATIC_RANGE {}
+
+table BONAMIK_EMISSIVE_WIND {
+	bonamik_group:uint32 = 48; // can only really guess the name
+	select_group:[uint32];
+	blended_frames_on:uint32 = 0;
+	blended_frames_off:uint32 = 0;
+	base_power:float = 1.0;
+	amplitude:float = 1.0;
+	period:float = 1.0;
+}
+
+table BONAMIK_GROUND_OFF_RANGE {
+	select_group:[uint32];
+}
+
+table BONAMIK_GROUND_ON_RANGE {
+	select_group:[uint32];
+}
+
+table BONAMIK_KINEMATIC2DYNAMIC_RANGE {}
+
+table BONAMIK_REINITIALIZE_POSE_RANGE {
+	field_0:bool = true;
+}
+
+table BONAMIK_SCALE_CONE {}
+
+table BONAMIK_SCALE_INNERCONE_RANGE {
+	bonamik_group:uint32 = 48;
+	select_group:[uint32];
+	blend_enabled:bool = false;
+	field_3:uint32 = 0;
+	value:float = 1.0;
+	blend_frames_on:uint32 = 0;
+	blend_frames_off:uint32 = 0;
+}
+
+table BONAMIK_SCALE_LOCALFORCE_RANGE {
+	scale:float = 1.0;
+	blend_frames_on:uint32 = 0;
+	blend_frames_off:uint32 = 0;
+	select_group:[uint32]; // 0xA
+}
+
+table BONAMIK_SCALE_OUTERCONE_RANGE {}
+
+table BONAMIK_SCALE_WIND_RANGE {
+	select_group:[uint32];
+	scale:float = 0.0;
+	blend_frames_on:uint32 = 0;
+	blend_frames_off:uint32 = 0;
+}
+
+table BONAMIK_SCRIPT {
+	/* NOT FOUND */
+}
+
+enum BONAMIK_SIMULATION_CONTROL_TYPE : uint32 {
+	RESET,
+	SIMULATION_ON,
+	SIMULATION_OFF,
+	PAUSE,
+	PREROLL,
+	ANIMATION_BLEND_ON,
+	ANIMATION_BLEND_OFF,
+	LOCAL_FORCE_SCALE,
+	WIND_ON,
+	WIND_OFF,
+	GROUND_COLLISION_ON,
+	GROUND_COLLISION_OFF,
+	TURN_KINEMATIC_TO_DYNAMIC,
+	TURN_DYNAMIC_TO_KINEMATIC,
+}
+
+table BONAMIK_SIMULATION_CONTROL {
+	type:BONAMIK_SIMULATION_CONTROL_TYPE = RESET;
+	value: float = 1.0; // temporary, probably needs to be some kinda union
+	bonamik_group:uint32 = 48;
+	field_3:uint32 = 0; // guess
+}
+
+table BONAMIK_SIMULATION_OFF_RANGE {
+	bonamik_group:uint32 = 48;
+	select_group:[uint32];
+	blend_frames_start:uint32 = 0;
+	blend_frames_end:uint32 = 0;
+}
+
+table BONAMIK_SIMULATION_ON_RANGE {
+	bonamik_group:uint32 = 48;
+	select_group:[uint32];
+	blend_frames_start:uint32 = 0;
+	blend_frames_end:uint32 = 0;
+}
+
+table BONAMIK_UNEUNE_SCALE_RANGE {
+	/* NOT FOUND */
+}
+
+table BRAKE_WITH_INERTIA {
+	final_speed:float = 0.0;
+	easeOut_decel_factor:float = 1.0;
+}
+
+table CALLCAMERASEQUENCE {
+	field_0:string;
+}
+
+table CALLCAMERASEQUENCE_FIXID {
+	sequence_id:uint32 = 0;
+	field_1:bool = true;
+}
+
+table CALLCAMERASEQUENCE_FIXID_RANGE {
+	sequence_id:uint32 = 0;
+}
+
+table CAMERA_TURN_TO_TARGET {
+	field_0:uint32 = 0;
+	time:float = 0.0;
+	field_2:uint8 = 0;
+}
+
+/* EMPTY TABLE */
+table CANCEL {}
+
+/* EMPTY TABLE */
+table CHANCE_STATE {}
+
+table CHANGE_CHARA_COLLISION {
+	is_char:bool = false;
+	char_id:uint32 = 0;
+	is_bg:bool = false;
+	bg_id:uint32 = 0;
+	is_vslims:bool = false;
+	vslims_id:uint32 = 0;
+}
+
+table CHANGE_CHARA_COLLISION_RANGE {
+	is_char:bool = false;
+	char_id:uint32 = 0;
+	is_bg:bool = false;
+	bg_id:uint32 = 0;
+	is_vslims:bool = false;
+	vslims_id:uint32 = 0;
+}
+
+table CHANGE_CHARA_WEIGHT_RANGE {
+	mass:float = 0.0;
+}
+
+/* NOT FOUND */
+table CHANGE_DAMAGE_MOTION_STATUS {
+}
+
+table CHANGE_STATUS_PARAMETER {
+	field_0:uint32 = 0;
+}
+
+table CHR_COLLISION {
+	field_0:bool = true;
+}
+
+table CHR_COLLISION_DURATION {
+	new_chr:bool = true;
+}
+
+table CHR_PROXY_TO_KINEMATIC {
+	/* EMPTY TABLE */
+}
+
+table CLOSE_ROOF_NG {
+	/* EMPTY TABLE */
+}
+
+table CLOSE_ROOF_RESET {
+	/* EMPTY TABLE */
+}
+
+table COMBAT_ENABLE_CREATE_PROJECTILE {
+	/* EMPTY TABLE */
+}
+
+table COMBAT {
+	attack_id:uint32 = 0;
+	attack_group:uint32 = 0;
+	ability:uint32 = 0;
+	ability_enable_replace_flag:bool = true;
+	ability_param:uint32 = 0;
+	group_1:uint32 = 0;
+	group_2:uint32 = 0;
+	group_3:uint32 = 0;
+	group_4:uint32 = 0;
+	only_hit_target_collision_group_id:uint32 = 0;
+	hand:uint32 = 0;
+	atkactor:uint32 = 0x1007DFC;
+}
+
+table COMBAT_RIFLE {
+	/* EMPTY TABLE */
+}
+
+table COMBINATION {
+	/* EMPTY TABLE */
+}
+
+table COMBO_ANOTHER_TARGET {
+	/* EMPTY TABLE */
+}
+
+table COMBO_ANOTHER_WEAPON {
+	/* EMPTY TABLE */
+}
+
+table COMBO_CHANNEL {
+	channel:uint32 = 0;
+}
+
+table COMBO_EXATTACK {
+	/* EMPTY TABLE */
+}
+
+table COMBO_LINK {
+	field_0:uint32 = 0;
+}
+
+table COMBO {
+	/* EMPTY TABLE */
+}
+
+table COMBO_WARP {
+	/* EMPTY TABLE */
+}
+
+table COMMAND_MOVE {
+	field_0:float;
+}
+
+table COUNTER {
+	/* EMPTY TABLE */
+}
+
+
+table CREATE_WIND_RANGE {
+	/* NOT FOUND */
+}
+
+table CREATE_WIND_TRIGGER {
+	/* NOT FOUND */
+}
+
+table DAMAGE_SHIFT {
+	/* EMPTY TABLE */
+}
+
+table DETACH {
+	/* EMPTY TABLE */
+}
+
+table DIRECT_DAMAGE {
+	field_0:uint32 = 0;
+	field_1:uint32 = 0;
+	field_2:uint32 = 0;
+	field_3:uint32 = 0;
+	field_4:uint32 = 0;
+	field_5:bool = true; // probably ability_enable_replace_flag = true;
+	field_6:uint32 = 0;
+
+	// TODO: (07/31/2026) - names found but order isn't known yet
+	// ability_enable_replace_flag:bool;
+	// linkanim_participant_flag:bool;
+	// ability_param:uint32;
+	// param:uint32;
+	// attack_group:uint32;
+	// linkanim_actor:uint32;
+	// ability:uint32;
+}
+
+table DISABLE_ATTACK {
+	/* EMPTY TABLE */
+}
+
+table DISABLE_BODYDRIVER {
+	blendouttime:float = 0.3;
+}
+
+table DISABLE_PHYSICS {
+	/* NOT FOUND */
+	// group:uint32;
+}
+
+table DISABLE_TARGET_MARKER {
+	field_0:bool = false;
+}
+
+table DISABLE_TARGET_MARKER_RANGE {
+	/* EMPTY TABLE */
+}
+
+table DISCARD_WEAPON {
+	/* EMPTY TABLE */
+}
+
+table DISTANCE_CORRECTION_WITH_TARGET_HORIZONTAL {
+	escape_radius:float = 0.0;
+	min_approach_radius:float = 3.0;
+	max_approach_radius:float = 6.0;
+	random_angle_when_non_homing:float = 0.0;
+	speed:float = 2.0;
+	acceleration:float = 2.5;
+	deceleration:float = 2.5;
+	is_homing:bool = true;
+	apply_base_scale:bool = false;
+}
+
+table DISTANCE_CORRECTION_WITH_TARGET_VERTICAL {
+	escape_radius:float = 0.0;
+	min_approach_radius:float = 3.0;
+	max_approach_radius:float = 6.0;
+	speed:float = 2.0;
+	acceleration:float = 2.5;
+	deceleration:float = 2.5;
+	is_homing:bool = true;
+	use_ground_height:bool = false;
+	apply_base_scale:bool = false;
+}
+
+table DOWN_STATE {
+	rush_link_id:uint32 = 0;
+}
+
+table ENABLE_CONTROL {
+	/* EMPTY TABLE */
+}
+
+table ENABLE_DEFENCE {
+	/* EMPTY TABLE */
+}
+
+table ENABLE_FINISH_LINKANIMATION {
+	/* EMPTY TABLE */
+}
+
+table ENABLE_LAYER_ANIM {
+	/* EMPTY TABLE */
+}
+
+table ENABLE_PHYSICS {
+	/* NOT FOUND */
+	group:uint32 = 0;
+}
+
+table ENABLE_TURN {
+	/* EMPTY TABLE */
+}
+
+table EXECUTION_RESERVE_GAMBIT {
+	// TODO: (07/31/2026) - Both fields seem to be FixIDs
+	field_0:uint32 = 0;
+	field_1:uint32 = 0;
+}
+
+table EXTERNAL_CONTROL {
+	/* EMPTY TABLE */
+}
+
+table FAKE_ATTACH {
+	// TODO: (07/31/2026) - 1-4 seem to be FixIDs
+	field_0:uint32 = 0; // not found
+	field_1:uint32 = 0;
+	field_2:uint32 = 0;
+	field_3:uint32 = 0;
+	field_4:uint32 = 0;
+}
+
+table FISHING_BITE_APPEAR_WATER_SURFACE {
+	/* EMPTY TABLE */
+}
+
+table FISHING_JUMP_START {
+	/* EMPTY TABLE */
+}
+
+table FISHING_REELING_END {
+	/* EMPTY TABLE */
+}
+
+table FISHING_REELING_ROT_SYNC {
+	// TODO: (07/31/2026)
+	field_0:uint32 = 0; // not found
+	field_1:float;
+}
+
+// TODO: (07/31/2026) - only >100 left to go...
+table FLINCH_ARMOR_RANGE {}
+table FOOTSTEP {}
+table FORCE_INTERACTION_DURATION {}
+table FREERUN_TRIGGER {}
+table GRAVITY_SET {}
+table GRAVITY_SET_RANGE {}
+table GUARD_STATUS {}
+table GUARD_STATUS_RANGE {}
+table HEIGHT_MOVE {}
+table HIT_COLLISION_OFF {}
+table HIT_COLLISION_OFF_TRG {}
+table HIT_COLLISION_ON {}
+table HIT_COLLISION_ON_TRG {}
+table IGNORE_EVENT_PRIORITY_COLLISION_RANGE {}
+table IK_AIM_RETARGET {}
+table IK_ATTACK_RETARGET_ACQUIRE_TARGET {}
+table IK_ATTACK_RETARGET_HIT_DIRECTION {}
+table IK_ATTACK_RETARGET_SLASH {}
+table IK_DISABLE {}
+table IK_ENABLE {}
+table IK_FIXUP_HIGH_VELOCITY_HIT {}
+table IK_GRAB_LEFT_LINKED {}
+table IK_LOCK_FOOT {}
+table IK_LOOKAT_ADDITIVE {}
+table IK_LOOKAT_ADDITIVE_CHANGE_POSE {}
+table IK_LOOKAT_ADDITIVE_DISABLE {}
+table IK_LOOKAT_PAUSE_TARGET_TRACKING {}
+table IK_MODIFY_PARAMETER {}
+
+table IK_RANGE_DISABLE {
+	field_0:uint16 = 0;
+}
+
+table IK_RANGE_ENABLE {}
+table IK_RANGE_MODIFY_PARAMETER {}
+table IK_RANGE_SET_TUNING {}
+table IK_SET_TUNING {}
+table IK_SET_TUNING_AND_ENABLE {}
+table INERTIA_OFF {}
+table INERTIA_ON {}
+table INERTIA_SET {}
+table INTERACTION_MESSAGE {}
+table INTERACTION_ON {}
+table JUMP_MODE_SET {}
+table JUMP_STATE {}
+table KINEDRIVER_DISABLE {}
+table KINEDRIVER_ENABLE {}
+table KINEDRIVER_ENABLE_RANGE {}
+table LEAPJUMP_STATE {}
+table LEAVE_WEAPON {}
+table LINK_ANIM_ATTACH {}
+table LINK_ANIM_ATTACH_RANGE {}
+table LINK_ANIM_EXECUTE {}
+table LINK_ANIM_TIMELINE {}
+table MENU_ABILITY_DISP {}
+table MENU_USE_SKILL_INFO {}
+table MENU_UTILITY_RANGE_DISP {}
+table MENU_UTILITY_TICK_DISP {}
+table MISSION_BATTLESHIP_MESSAGE {}
+table MISSION_IFRIT_FIRESTATE_INVALID {}
+table MISSION_IFRIT_INVISIBLE {}
+table MISSION_SEND_MESSAGE_TO_EOS_WEAPON {}
+table MONS_EMO_ADD {}
+table MONS_EMO_SET {}
+table MONS_PARTS_BREAK {}
+table MONS_PARTS_REPAIR {}
+table MOVE_MODE_SET {}
+table MOVE_SUMMON_POINT {}
+table MULTIPLAY_PLAY_CHAT {}
+table NIFL_MATERIAL_SET_CONDITION {}
+table NIFL_MATERIAL_UPDATE {}
+table NIFL_PARTS_BREAK {}
+table NIFL_WIREARM_SHOOT {}
+table NIFL_WIREARM_SWITCHING {}
+table NOT_FALLING {}
+table PARRY_MARKER {}
+table PARRY_MARKER_BUDDY {}
+table PARTS_FADE {}
+table PERCEPTION_SENSOR {}
+table PINCH_RESCUE_DISABLE {}
+table PLAYVFXPARAM {}
+table PLAY_CHARA_CRY {}
+table PLAY_DURATIONSOUND {}
+table PLAY_LUMINOUS_VFX {}
+table PLAY_LUMINYVFX {}
+table PLAY_LUMINYVFX_RANGE {}
+table PLAY_SOUND {
+	id:uint32 = 0;
+	unk:uint32 = 0;
+	unk2:bool = false;
+	pan:float = 0.0;
+	frpan:float = 1.0;
+	udpan:float = 0.0;
+	panfade:float = 0.0;
+}
+
+table PLAY_VFX {}
+table PLAY_VFX_WITH_OFFSET {}
+table PLAY_VOICE {}
+table POST_ANIM_MESSAGE {}
+
+table POST_ANIM_MESSAGE_TO_ARMEDFORM_WEAPON {
+	message:uint32;
+	weapon_0:bool = true;
+	weapon_1:bool = true;
+	weapon_2:bool = true;
+	weapon_3:bool = true;
+	weapon_4:bool = true;
+	weapon_5:bool = true;
+	weapon_6:bool = true;
+	weapon_7:bool = true;
+	weapon_8:bool = true;
+	weapon_9:bool = true;
+	weapon_10:bool = true;
+	weapon_11:bool = true;
+	weapon_12:bool = true;
+}
+
+table POST_ANIM_MESSAGE_TO_ATTACHED_OBEJCT {}
+table POST_ANIM_MESSAGE_TO_WEAPON {}
+table PUSH_COLLISION_STATE {}
+table QTE_DURATION {}
+table RANDOM_FLOATING_MOVE {}
+table RANGE_ATTACK_TRIGER {}
+table RANGE_FADE {}
+table RANGE_MOVE_MODE_SET {}
+table RANGE_VFX {}
+table REGRIP_WEAPON {}
+table RELEASE_ACTOR {}
+table RELOAD {}
+table RESET_VEHICLE_WIPER_START {}
+table RETURN_COMMAND_LEVEL {}
+table SA_ROTATION {}
+table SEND_MESSAGE_TO_BODY {}
+table SEND_MESSAGE_WHEN_LANDING {}
+table SET_EMOTION {}
+table SET_FADE {}
+table SET_GAMBIT_CONDITION_VARIABLE {}
+table SET_PARTS_VISIBLE {}
+table SET_STATUS {}
+table SET_STATUS_RANGE {}
+table SET_TIME_SPEED {}
+table SET_VEHICLE_ENGINE_STATE {}
+table SET_VEHICLE_OPENING_WINDOW {}
+table SET_VEHICLE_REQ_MATERIAL {}
+table SET_VEHICLE_ROOF_STATE {}
+table SET_VEHICLE_UPDATE_JOINT {}
+table SET_VEHICLE_WIPER_END {}
+table SET_VISIBLE_RANGE {}
+table SHIFT_DECOY {}
+table SHOOT_TURRET {}
+table SIDETILTBIPED_CONFIG {}
+table SKILL_CAMERA {}
+table SKILL_CAMERA_SET_ATTACH {}
+table SNAPSHOPT_SCORE {}
+table SNAPSHOT_TAKE {}
+table SOUNDOPTION_DURATION {}
+table SPEAR_ENEMY_JUMP_MESSAGE {}
+table SPEAR_SHOT_MESSAGE {}
+table STAND_IN_VEHICLE {}
+table START_SCRIPT {}
+table STOPVFXPARAM {}
+table STOP_ATTACHING_VFX {}
+table STOP_LUMINOUS_VFX {}
+table STOP_LUMINYVFX {}
+table SUMMON_MONSTER {}
+table SWITCH_TO_RAGDOLL {}
+table TARGET_POINT_STATUS_CHANGE {}
+table TRANS_SCALE {}
+
+table TRANS_SCALE_XZ {
+	field_0:float;
+	field_1:float;
+	field_2:float;
+	field_3:float;
+	field_4:float;
+	field_5:uint8; // enum
+}
+
+table TURN {}
+table TURN_TO_TARGET {}
+table TURN_TO_TARGET_EX {}
+table TURN_TO_TARGET_RANGE {}
+table VFX_ATTACK {}
+table VFX_ATTACK_RANGE {}
+table WANT_PUSH_RANGE {}
+table WARP {}
+table WARP_AND_ROTATION {}
+table WARP_RANGE {}
+table WARP_TARGET {}
+table WIRE_ATTACK_SELECTOR {}
+table WIRE_BIND_FINISH {}
+table WIRE_BURST_BEGIN_EVENT {}
+table WIRE_BURST_EXPLOSION_ATTACK_SELECTOR {}
+table WIRE_BURST_PARRY_MARKER {}
