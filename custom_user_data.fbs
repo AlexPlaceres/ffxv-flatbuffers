@@ -591,16 +591,100 @@ table FISHING_REELING_ROT_SYNC {
 	field_1:float;
 }
 
-// TODO: (07/31/2026) - only >100 left to go...
-table FLINCH_ARMOR_RANGE {}
-table FOOTSTEP {}
-table FORCE_INTERACTION_DURATION {}
-table FREERUN_TRIGGER {}
-table GRAVITY_SET {}
-table GRAVITY_SET_RANGE {}
-table GUARD_STATUS {}
-table GUARD_STATUS_RANGE {}
-table HEIGHT_MOVE {}
+enum FLINCH_ARMOR_TYPE : uint32 {
+	DUMMY,
+	/* UNKNOWN */
+}
+
+table FLINCH_ARMOR_RANGE {
+	FLINCH_TYPE:FLINCH_ARMOR_TYPE = DUMMY;
+}
+
+table FLY_OFF {
+	/* EMPTY TABLE */
+}
+
+table FLY_ON {
+	/* EMPTY TABLE */
+}
+
+enum FOOTSTEP_TYPE : uint32 {
+	FOOTSTEP_TYPE_UNKNOWN = 0x0,
+	SLIDE = 0x10025EC,
+	WALK = 0x10025ED,
+	DOWN = 0x10025EE,
+	RUN = 0x10025EF,
+	FALL = 0x10025F0,
+	JUMP = 0x10025F1,
+	CATCH = 0x10025F2,
+	START = 0x10025F3,
+	LAND = 0x10025F4,
+	STOP = 0x10025F5,
+	TOE = 0x10025F6,
+	HLAND = 0x10025F8,
+}
+
+table FOOTSTEP {
+	id:FOOTSTEP_TYPE = FOOTSTEP_TYPE_UNKNOWN;
+	position_3d_flag:bool = true;
+	bind:bool = false;
+	volume:float = 1.0;
+	elementid:uint32 = 0;
+	field_5:uint32 = 0; // unknown
+}
+
+table FORCE_COVER {
+	/* EMPTY TABLE */
+}
+
+table FORCE_COVER {
+	/* EMPTY TABLE */
+}
+
+table FORCE_INTERACTION_DURATION {
+	/* NOT FOUND */
+	animation:uint32 = 0;
+}
+
+table FREERUN_TRIGGER {
+	/* NOT FOUND */
+}
+
+table GRAVITY_SET {
+	gravity:float = 9.8000002;
+}
+
+table GRAVITY_SET_RANGE {
+	gravity:float = 9.8000002;
+}
+
+table GUARD_STATUS {
+	/* NOT FOUND */
+	guard_status:bool = false;
+}
+
+table GUARD_STATUS_RANGE {
+	/* NOT FOUND */
+	guard_status:bool = false; // guessing here
+}
+
+// TODO: (08/03/2026) - fuckin good luck with this one
+table HEIGHT_MOVE {
+	field_0:uint32 = 0;
+	field_1:uint32 = 0;
+	field_2:uint32 = 0;
+	field_3:uint32 = 0;
+	field_4:uint32 = 0;
+	field_5:uint32 = 0;
+	field_6:uint32 = 0;
+	field_7:uint32 = 0;
+	field_8:uint32 = 0;
+	field_9:uint32 = 0;
+	field_10:uint32 = 0;
+	field_11:uint32 = 0;
+	field_12:uint32 = 0;
+}
+
 table HIT_COLLISION_OFF {}
 table HIT_COLLISION_OFF_TRG {}
 table HIT_COLLISION_ON {}
