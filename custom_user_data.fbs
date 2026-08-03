@@ -1,15 +1,28 @@
 namespace Black.Motion.LmAnimation.CustomData;
 
+enum EVENTIDTYPE {
+	ET_NONE = 0x0,
+	ET_FIXID = 0x2,
+	ET_STRING = 0x3,
+}
+
+enum EVENTTRIGGERTYPE {
+	TR_NONE = 0x0,
+	TR_PARRY = 0x1,
+	TR_GUARD = 0x2,
+}
+
 table ACTIVATE_REMOTE_EVENT {
-	field_0:uint32 = 0;
-	field_1:uint32 = 0; // offset to something?
-	event_id:uint32 = 0;
-	field_3:uint32 = 0;
+	// Not 100% on these guesses but they check out so far
+	event_id_type:EVENTIDTYPE = ET_NONE;
+	event:String = "";
+	remote_event_id:uint32 = 0;
+	event_trigger_type:EVENTTRIGGERTYPE = TR_NONE;
 }
 
 table ACTIVATE_REMOTE_EVENT_DURATION {
-	field_0:uint32 = 0;
-	field_1:uint32 = 0;
+	on_remote_event_id:uint32 = 0;
+	off_remote_event_id:uint32 = 0;
 }
 
 table ADD_DIRTY {
@@ -23,7 +36,7 @@ table ALG_INTERVAL {
 table ADD_JC_GAUGE_LEVEL {}
 
 table ALLOW_PUSH_RANGE {
-	unknown:uint32 = 0;
+	is_allow:bool = false;
 }
 
 table ALTERNA {
