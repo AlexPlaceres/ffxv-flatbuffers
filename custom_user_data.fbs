@@ -681,29 +681,68 @@ table GUARD_STATUS_RANGE {
 	guard_status:bool = false; // guessing here
 }
 
-// TODO: (08/03/2026) - fuckin good luck with this one
 table HEIGHT_MOVE {
-	field_0:uint32 = 0;
-	field_1:uint32 = 0;
+	// Both OnEnd and OnBegin for LmAnimInstanceEvent don't even bother reading from it??
+	field_0:float = 0.0;
+	field_1:float = 0.0;
 	field_2:uint32 = 0;
-	field_3:uint32 = 0;
-	field_4:uint32 = 0;
-	field_5:uint32 = 0;
-	field_6:uint32 = 0;
-	field_7:uint32 = 0;
-	field_8:uint32 = 0;
-	field_9:uint32 = 0;
-	field_10:uint32 = 0;
-	field_11:uint32 = 0;
-	field_12:uint32 = 0;
+	field_3:uint32 = 1; // non-zero default (if any)
+	field_4:float = 0.0;
+	field_5:float = 0.0;
+	field_6:float = 0.0;
+	field_7:float = 0.0;
+	field_8:float = 0.0;
+	field_9:uint32 = 0; // not found
+	field_10:uint32 = 0; // not found
+	field_11:bool = false;
+	field_12:uint32 = 0; // not found
 }
 
-table HIT_COLLISION_OFF {}
-table HIT_COLLISION_OFF_TRG {}
-table HIT_COLLISION_ON {}
-table HIT_COLLISION_ON_TRG {}
-table IGNORE_EVENT_PRIORITY_COLLISION_RANGE {}
-table IK_AIM_RETARGET {}
+table HESITATE_ATTACK {
+	/* EMPTY TABLE */
+}
+
+table HIT_COLLISION_OFF {
+	group:uint32 = 0;
+	group1:uint32 = 0;
+	group2:uint32 = 0;
+	group3:uint32 = 0;
+}
+
+table HIT_COLLISION_OFF_TRG {
+	group:uint32 = 0;
+	group1:uint32 = 0;
+	group2:uint32 = 0;
+	group3:uint32 = 0;
+}
+
+table HIT_COLLISION_ON {
+	group:uint32 = 0;
+	group1:uint32 = 0;
+	group2:uint32 = 0;
+	group3:uint32 = 0;
+}
+
+table HIT_COLLISION_ON_TRG {
+	group:uint32 = 0;
+	group1:uint32 = 0;
+	group2:uint32 = 0;
+	group3:uint32 = 0;
+}
+
+table IGNORE_EVENT_PRIORITY_COLLISION_RANGE {
+	is_ignore:bool = true;
+}
+
+// TODO: (08/05/2026) - man that was barely anything today
+table IK_AIM_RETARGET {
+	field_0:uint32 = 0;
+}
+
+table IK_AIM_RETARGET_BLENDOUT {
+	/* EMPTY TABLE */
+}
+
 table IK_ATTACK_RETARGET_ACQUIRE_TARGET {}
 table IK_ATTACK_RETARGET_HIT_DIRECTION {}
 table IK_ATTACK_RETARGET_SLASH {}
