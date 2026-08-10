@@ -734,7 +734,6 @@ table IGNORE_EVENT_PRIORITY_COLLISION_RANGE {
 	is_ignore:bool = true;
 }
 
-// TODO: (08/05/2026) - man that was barely anything today
 table IK_AIM_RETARGET {
 	field_0:uint32 = 0;
 }
@@ -743,18 +742,123 @@ table IK_AIM_RETARGET_BLENDOUT {
 	/* EMPTY TABLE */
 }
 
-table IK_ATTACK_RETARGET_ACQUIRE_TARGET {}
-table IK_ATTACK_RETARGET_HIT_DIRECTION {}
-table IK_ATTACK_RETARGET_SLASH {}
-table IK_DISABLE {}
-table IK_ENABLE {}
-table IK_FIXUP_HIGH_VELOCITY_HIT {}
-table IK_GRAB_LEFT_LINKED {}
-table IK_LOCK_FOOT {}
-table IK_LOOKAT_ADDITIVE {}
-table IK_LOOKAT_ADDITIVE_CHANGE_POSE {}
-table IK_LOOKAT_ADDITIVE_DISABLE {}
-table IK_LOOKAT_PAUSE_TARGET_TRACKING {}
+table IK_ATTACK_RETARGET_ACQUIRE_TARGET {
+	field_0:uint32 = 0; // not found
+	field_1:float = 0.0;
+	field_2:float = 0.0;
+	field_3:uint32 = 0; // not found
+	field_4:float = 0.0;
+	field_5:float = 0.0;
+}
+
+table IK_ATTACK_RETARGET_HIT_DIRECTION {
+	field_0:float = 0.0;
+	field_1:float = 0.0;
+	field_2:uint32 = 1; // default is non-zero so set it to 1 for now
+}
+
+table IK_ATTACK_RETARGET_SLASH {
+	field_0:float = 0.0;
+	field_1:float = 0.0;
+	field_2:bool = false;
+	field_3:bool = true;
+	field_4:bool = false;
+	field_5:uint32 = 0; // saying uint32 but the number's weird so idk
+	field_6:bool = false;
+	field_7:float = 0.0;
+
+	// hints from linker map file
+	// maximum_target_distance:float
+	// use_maximum_target_distance:bool
+}
+
+// TODO: IKDisable/IKEnable tables don't exist yet
+table IK_DISABLE {
+	instruction:SQEX.Luminous.FlatBuffer.Animation.IK.IKDisable;
+}
+
+table IK_ENABLE {
+	instruction:SQEX.Luminous.FlatBuffer.Animation.IK.IKEnable;
+}
+
+table IK_FIXUP_HIGH_VELOCITY_HIT {
+	field_0:float = 0.0;
+	field_1:float = 0.0;
+	field_2:float = 0.0;
+	field_3:uint32 = 0;
+
+	// hints from linker map
+	// collision_damper:float
+	// collision_spring:float
+	// max_spring_velocity_multiplier:float
+}
+
+table IK_GRAB_ACQUIRE_LEFT {
+	/* EMPTY TABLE */
+}
+
+table IK_GRAB_ACQUIRE_RIGHT {
+	/* EMPTY TABLE */
+}
+
+table IK_GRAB_LEFT_LINKED_BLENDOUT {
+	/* EMPTY TABLE */
+}
+
+table IK_GRAB_LEFT_LINKED {
+	field_0:uint32 = 0; // not found
+}
+
+table IK_GRAB_LEFT {
+	/* EMPTY TABLE */
+}
+
+table IK_GRAB_RIGHT_LINKED_BLENDOUT {
+	/* EMPTY TABLE */
+}
+
+table IK_GRAB_RIGHT_LINKED {
+	field_0:uint32 = 0; // not found
+}
+
+table IK_GRAB_RIGHT {
+	/* EMPTY TABLE */
+}
+
+table IK_LOCK_FOREFOOT {
+	/* EMPTY TABLE */
+}
+
+table IK_LOCK_HINDFOOT {
+	/* EMPTY TABLE */
+}
+
+table IK_LOCK_FOOT {
+	/* NOT FOUND */
+}
+
+table IK_LOOKAT_ADDITIVE {
+	/* NOT FOUND */
+	field_0:int32 = 0;
+
+	// hints from linker map
+	// i_pose_at_frame:int
+}
+
+table IK_LOOKAT_ADDITIVE_CHANGE_POSE {
+	field_0:uint32 = 0;
+	field_1:uint16 = 0;
+}
+
+table IK_LOOKAT_ADDITIVE_DISABLE {
+	field_0:uint32 = 0; // not found
+}
+
+table IK_LOOKAT_PAUSE_TARGET_TRACKING {
+	field_0:uint16 = 0;
+}
+
+// TODO: (08/10/2026) - continue from here
 table IK_MODIFY_PARAMETER {}
 
 table IK_RANGE_DISABLE {
