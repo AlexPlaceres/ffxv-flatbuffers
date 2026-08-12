@@ -858,32 +858,126 @@ table IK_LOOKAT_PAUSE_TARGET_TRACKING {
 	field_0:uint16 = 0;
 }
 
-// TODO: (08/10/2026) - continue from here
-table IK_MODIFY_PARAMETER {}
-
-table IK_RANGE_DISABLE {
-	field_0:uint16 = 0;
+table IK_MODIFY_PARAMETER {
+	// TODO: IKModifyParameter table doesn't exist yet
+	properties:SQEX.Luminous.FlatBuffer.Animation.IK.IKModifyParameter;
 }
 
-table IK_RANGE_ENABLE {}
-table IK_RANGE_MODIFY_PARAMETER {}
-table IK_RANGE_SET_TUNING {}
-table IK_SET_TUNING {}
-table IK_SET_TUNING_AND_ENABLE {}
-table INERTIA_OFF {}
-table INERTIA_ON {}
-table INERTIA_SET {}
-table INTERACTION_MESSAGE {}
-table INTERACTION_ON {}
-table JUMP_MODE_SET {}
-table JUMP_STATE {}
-table KINEDRIVER_DISABLE {}
-table KINEDRIVER_ENABLE {}
-table KINEDRIVER_ENABLE_RANGE {}
-table LEAPJUMP_STATE {}
-table LEAVE_WEAPON {}
-table LINK_ANIM_ATTACH {}
-table LINK_ANIM_ATTACH_RANGE {}
+table IK_RANGE_DISABLE {
+	// TODO: IKControllerID enum doesn't exist yet
+	controller_id:SQEX.Luminous.FlatBuffer.Animation.IK.IKControllerID = IKControllerID_LOOK_AT;
+}
+
+table IK_RANGE_ENABLE {
+	controller_id:SQEX.Luminous.FlatBuffer.Animation.IK.IKControllerID = IKControllerID_LOOK_AT;
+}
+
+table IK_RANGE_MODIFY_PARAMETER {
+	properties:SQEX.Luminous.FlatBuffer.Animation.IK.IKModifyParameter;
+}
+
+table IK_RANGE_SET_TUNING {
+	// TODO: IKSetTuning table doesn't exist yet
+	properties:SQEX.Luminous.FlatBuffer.Animation.IK.IKSetTuning;
+	specify_blend_out_time:float = -1.0;
+}
+
+table IK_SET_TUNING {
+	properties:SQEX.Luminous.FlatBuffer.Animation.IK.IKSetTuning;
+}
+
+table IK_SET_TUNING_AND_ENABLE {
+	/* NOT FOUND */
+}
+
+// ????spine twister?
+table IK_SPINETWISTER_DISABLE {
+	/* EMPTY TABLE */
+}
+
+table INERTIA_OFF {
+	/* NOT FOUND */
+}
+
+table INERTIA_ON {
+	/* NOT FOUND */
+}
+
+table INERTIA_SET {
+	enabled:bool = false;
+}
+
+table INTERACTION_MESSAGE {
+	id:uint32 = 0;
+}
+
+enum INTERACTION : int32 {
+	INTERACTION_ACTION = 0x0,
+	INTERACTION_REACTION = 0x1,
+}
+
+table INTERACTION_ON {
+	interaction:INTERACTION = INTERACTION_ACTION;
+	interaction_id:uint32 = 0;
+}
+
+table JUMP_STATE {
+	field_0:bool = true;
+	field_1:bool = false;
+	field_2:float = 0;
+
+	// hint from linker map
+	// gravity_off:bool -- I'm thinking it's field_1
+}
+
+table KINEDRIVER_DISABLE {
+	kdi:string;
+}
+
+table KINEDRIVER_ENABLE {
+	kdi:string;
+}
+
+table KINEDRIVER_ENABLE_RANGE {
+	field_0:bool = false;
+	kdi:string;
+}
+
+table LEAPJUMP_STATE {
+	/* EMPTY TABLE */
+}
+
+
+enum LmUEHand : int32 {
+	BOTH = 0x0,
+	RIGHT = 0x100163B,
+	LEFT = 0x100163B,
+}
+
+table LEAVE_WEAPON {
+	field_0:uint32 = 0;
+	hand:LmUEHand = BOTH;
+	is_vfx:bool = false;
+}
+
+table LINK_ANIM_ATTACH {
+	/* NOT FOUND */
+}
+
+// TODO: (08/12/2026) - Order these properly then continue
+table LINK_ANIM_ATTACH_RANGE {
+	owner_bone_id:uint32 = 0;
+	target_element_id:uint32 = 0;
+	manual_offset:bool = false;
+	offsetx:float = 0.0;
+	offsety:float = 0.0;
+	offsetz:float = 0.0;
+	detach_time:float = 0.0;
+	attach_time:float = 0.0;
+	use_setpos:bool = false;
+	attach_to_noct:bool = true;
+}
+
 table LINK_ANIM_EXECUTE {}
 table LINK_ANIM_TIMELINE {}
 table MENU_ABILITY_DISP {}
