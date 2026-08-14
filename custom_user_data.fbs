@@ -964,7 +964,6 @@ table LINK_ANIM_ATTACH {
 	/* NOT FOUND */
 }
 
-// TODO: (08/12/2026) - Order these properly then continue
 table LINK_ANIM_ATTACH_RANGE {
 	owner_bone_id:uint32 = 0;
 	target_element_id:uint32 = 0;
@@ -972,41 +971,197 @@ table LINK_ANIM_ATTACH_RANGE {
 	offsetx:float = 0.0;
 	offsety:float = 0.0;
 	offsetz:float = 0.0;
-	detach_time:float = 0.0;
 	attach_time:float = 0.0;
-	use_setpos:bool = false;
-	attach_to_noct:bool = true;
+	detach_time:float = 0.0;
+	attach_to_noct:bool = false;
+	use_setpos:bool = true;
 }
 
-table LINK_ANIM_EXECUTE {}
-table LINK_ANIM_TIMELINE {}
-table MENU_ABILITY_DISP {}
-table MENU_USE_SKILL_INFO {}
-table MENU_UTILITY_RANGE_DISP {}
-table MENU_UTILITY_TICK_DISP {}
-table MISSION_BATTLESHIP_MESSAGE {}
-table MISSION_IFRIT_FIRESTATE_INVALID {}
-table MISSION_IFRIT_INVISIBLE {}
-table MISSION_SEND_MESSAGE_TO_EOS_WEAPON {}
-table MONS_EMO_ADD {}
-table MONS_EMO_SET {}
-table MONS_PARTS_BREAK {}
-table MONS_PARTS_REPAIR {}
-table MOVE_MODE_SET {}
-table MOVE_SUMMON_POINT {}
-table MULTIPLAY_PLAY_CHAT {}
-table NIFL_MATERIAL_SET_CONDITION {}
-table NIFL_MATERIAL_UPDATE {}
-table NIFL_PARTS_BREAK {}
-table NIFL_WIREARM_SHOOT {}
-table NIFL_WIREARM_SWITCHING {}
-table NOT_FALLING {}
-table PARRY_MARKER {}
-table PARRY_MARKER_BUDDY {}
-table PARTS_FADE {}
-table PERCEPTION_SENSOR {}
-table PINCH_RESCUE_DISABLE {}
-table PLAYVFXPARAM {}
+table LINK_ANIM_EXECUTE {
+	message_id:uint32 = 0;
+}
+
+table LINK_ANIM_TIMELINE {
+	id:uint32 = 0;
+	field_1:uint32 = 0;
+
+	/* NOT FOUND */
+	field_2:uint32 = 0;
+	field_3:uint32 = 0;
+	field_4:uint32 = 0;
+}
+
+enum PLAYER_CHARACTER : uint32 {
+	MYSELF = 0xFFFFFFFF,
+	NOCTIS = 0x0,
+	GLADIOLUS = 0x1,
+	PROMPTO = 0x2,
+	IGNIS = 0x3,
+	GUEST = 0x4,
+}
+
+table MENU_ABILITY_DISP {
+	ability:uint32 = 0;
+	ability_owner:PLAYER_CHARACTER = MYSELF;
+}
+
+table MENU_USE_SKILL_INFO {
+	id:uint32 = 0;
+	time:float = 3.0;
+}
+
+enum RANGE_MENU_TYPE : uint32 {
+	UNKNOWN = 0x0,
+	STANCE_INFO = 0x1,
+	SHIFT_ESCAPE = 0x2,
+	GUARD_ATTACK = 0x3,
+	NITEN_ITIRYU = 0x4,
+	GUARD = 0x5,
+	EPI_DAMAGE_SHIFT_INFO = 0x6,
+	EPI_COUNTER_INFO = 0x7,
+}
+
+table MENU_UTILITY_RANGE_DISP {
+	type:RANGE_MENU_TYPE = UNKNOWN;
+	message_id:uint32 = 0;
+}
+
+enum TICK_MENU_TYPE : uint32 {
+	UNKNOWN = 0x0,
+	SKILL_INFO = 0x1,
+	LINK_ATTACK_INFO = 0x2,
+	EXTRA_LINK_INFO = 0x3,
+	BACK_ATTACK_LINK_INFO = 0x4,
+	PARRY_LINK_ATTACK_INFO = 0x5,
+	PHANTOM_LINK_ATTACK_INFO = 0x6,
+}
+
+table MENU_UTILITY_TICK_DISP {
+	type:TICK_MENU_TYPE = UNKNOWN;
+	message_id:uint32 = 0;
+	disp_time:float = 3.0;
+}
+
+table MISSION_BATTLESHIP_MESSAGE {
+	field_0:uint32 = 0; // not found
+}
+
+
+table MISSION_IFRIT_FIRESTATE_INVALID {
+	/* EMPTY TABLE */
+}
+
+table MISSION_IFRIT_INVISIBLE {
+	invisible:bool = true;
+	fade_time:float = 1.0;
+	linkage_chara_collision:bool = true;
+	linkage_bg_collision:bool = true;
+	linkage_physics_static_body:bool = true;
+	linkage_gravity:bool = true;
+	linkage_target:bool = true;
+	linkage_vfx:bool = true;
+}
+
+table MISSION_SEND_MESSAGE_TO_EOS_WEAPON {
+	message:uint32 = 0;
+}
+
+table MONS_EMO_ADD {
+	emotion_set:float = 0.0;
+}
+
+table MONS_EMO_SET {
+	emotion_set:float = 0.0;
+}
+
+table MONS_PARTS_BREAK {
+	breakable_parts_id1:uint32 = 0;
+	breakable_parts_id2:uint32 = 0;
+	breakable_parts_id3:uint32 = 0;
+	breakable_parts_id4:uint32 = 0;
+	breakable_parts_id5:uint32 = 0;
+	field_06:bool = true;
+}
+
+table MONS_PARTS_REPAIR {
+	parts_id:uint32 = 0;
+	field_1:bool = true;
+}
+
+enum MOVE_MODE {
+	MOVE_MODE_UNKNOWN = 0x0,
+	INPUT_DIRECTION = 0x1008440,
+	INPUT_BODY_DIRECTION = 0x100846E,
+	BODY_DIRECTION = 0x100846F,
+	INPUT_MOTION_MANAGER = 0x1008470,
+}
+
+table MOVE_MODE_SET {
+	mode:MOVE_MODE = MOVE_MODE_UNKNOWN;
+}
+
+table MOVE_SUMMON_POINT {
+	/* NOT FOUND */
+}
+
+table MULTIPLAY_PLAY_CHAT {
+	message_id:uint32 = 0;
+}
+
+table NIFL_MATERIAL_SET_CONDITION {
+	enable:bool = true;
+	condition_id:uint32 = 0;
+}
+
+table NIFL_MATERIAL_UPDATE {
+	enable:bool = true;
+}
+
+table NIFL_PARTS_BREAK {
+	// guesses
+	parts_id:uint32 = 0;
+	field_1:uint32 = 0;
+}
+
+table NIFL_WIREARM_SHOOT {
+	/* EMPTY TABLE */
+}
+
+table NIFL_WIREARM_SWITCHING {
+	enable:bool = false;
+}
+
+table NOT_FALLING {
+	gravity_off:bool = false;
+}
+
+table PARRY_MARKER {
+	param:uint32 = 0;
+	flash:bool = true;
+}
+
+table PARRY_MARKER_BUDDY {
+	param:uint32 = 0;
+	flash:bool = true;
+}
+
+table PARTS_FADE {
+	/* NOT FOUND */
+}
+
+table PERCEPTION_SENSOR {
+	/* NOT FOUND */
+}
+
+table PINCH_RESCUE_DISABLE {
+	/* EMPTY TABLE */
+}
+
+table PLAYVFXPARAM {
+	/* NOT FOUND */
+}
+
+// TODO: (08/14/2026) - continue from here
 table PLAY_CHARA_CRY {}
 table PLAY_DURATIONSOUND {}
 table PLAY_LUMINOUS_VFX {}
