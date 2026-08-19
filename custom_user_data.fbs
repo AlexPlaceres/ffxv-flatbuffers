@@ -1161,11 +1161,46 @@ table PLAYVFXPARAM {
 	/* NOT FOUND */
 }
 
-// TODO: (08/14/2026) - continue from here
-table PLAY_CHARA_CRY {}
-table PLAY_DURATIONSOUND {}
-table PLAY_LUMINOUS_VFX {}
+// TODO: Refine these since I'm lacking the animation clip data to properly verify shit
+table PLAY_CHARA_CRY {
+	// bind_element_id:int32 = 0;
+}
+
+table PLAY_DURATIONSOUND {
+	file_path:string;
+	number:int32 = 0;
+	bind:bool = true;
+	bind_elementid:uint32 = 0;
+	volume:float = 0.0;
+	seek:float = 0.0;
+	fade_in:float = 0.0;
+	fade_out:float = 0.0;
+	pan:float = 0.0;
+	frpan:float = 1.0;
+	udpan:float = 0.0;
+	panfade:float = 0.0;
+}
+
+enum WEAPON_VFX : uint32 {
+	NONE = 0x0,
+	RIGHT = 0x1,
+	LEFT = 0x2,
+}
+
+table PLAY_LUMINOUS_VFX {
+	v_link_id:uint32 = 0;
+	v_link_id_mirror:uint32 = 0;
+	first_time_only:bool = false;
+	finish_signal:string;
+	weapon:WEAPON_VFX = NONE;
+	not_duplicate:bool = false;
+	property_int_name:string;
+	property_int_value:int32 = 0;
+}
+
+// TODO: (08/19/2026) - damn this is way slower
 table PLAY_LUMINYVFX {}
+
 table PLAY_LUMINYVFX_RANGE {}
 table PLAY_SOUND {
 	id:uint32 = 0;
