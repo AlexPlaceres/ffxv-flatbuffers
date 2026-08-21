@@ -1161,8 +1161,13 @@ table PLAYVFXPARAM {
 	/* NOT FOUND */
 }
 
-// TODO: Refine these since I'm lacking the animation clip data to properly verify shit
 table PLAY_CHARA_CRY {
+	field_0:uint32 = 0;
+	field_1:bool = true;
+	field_2:uint32 = 0; // not found
+	field_3:float = 0.0;
+	field_4:uint32 = 0; // not found
+	field_5:uint32 = 0; // not found
 	// bind_element_id:int32 = 0;
 }
 
@@ -1179,6 +1184,8 @@ table PLAY_DURATIONSOUND {
 	frpan:float = 1.0;
 	udpan:float = 0.0;
 	panfade:float = 0.0;
+	field_12:uint32 = 0; // not found
+	field_13:uint32 = 0;
 }
 
 enum WEAPON_VFX : uint32 {
@@ -1198,27 +1205,81 @@ table PLAY_LUMINOUS_VFX {
 	property_int_value:int32 = 0;
 }
 
-// TODO: (08/19/2026) - damn this is way slower
-table PLAY_LUMINYVFX {}
+table PLAY_LUMINYVFX {
+	vlink_path:string;
+	field_1:uint32 = 0;
+	field_2:uint32 = 0; // not found
+	field_3:uint32 = 0; // not found
+	field_4:uint32 = 0; // not found
+	field_5:uint32 = 0; // not found
+	vlink_id:uint32 = 0;
+	vlink_id_mirror:uint32 = 0;
+	only_first_time:bool = false;
+	weapon:WEAPON_VFX = NONE;
+}
 
-table PLAY_LUMINYVFX_RANGE {}
+enum VFX_STOP_TYPE : uint32 {
+	NORMAL = 0x0,
+	FADE = 0x1,
+	FORCE = 0x2,
+}
+
+table PLAY_LUMINYVFX_RANGE {
+	vlink_path:string;
+	vfxstoptype:VFX_STOP_TYPE = NORMAL;
+	field_2:uint32 = 0; // guess because data wasn't too clear
+	vlink_id:uint32 = 0;
+	vlink_id_mirror:uint32 = 0;
+	weapon:WEAPON_VFX = NONE;
+}
+
 table PLAY_SOUND {
-	id:uint32 = 0;
-	unk:uint32 = 0;
-	unk2:bool = false;
+	id:int32 = 0;
+	soundfixid:uint32 = 0;
+	file_path:string;
+	number:int32 = 0;
+	bind:bool = true;
+	bind_elementid:uint32 = 0;
+	volume:float = 1.0;
+	seek:float = 0.0;
+	fade:float = 0.0;
 	pan:float = 0.0;
 	frpan:float = 1.0;
 	udpan:float = 0.0;
 	panfade:float = 0.0;
 }
 
-table PLAY_VFX {}
-table PLAY_VFX_WITH_OFFSET {}
-table PLAY_VOICE {}
-table POST_ANIM_MESSAGE {}
+table PLAY_VFX {
+	field_0:uint32 = 0;
+	field_1:uint32 = 0; // not found
+	field_2:uint32 = 0; // not found
+	field_3:uint32 = 0; // not found
+}
+
+table PLAY_VFX_WITH_OFFSET {
+	/* NOT FOUND */
+}
+
+table PLAY_VOICE {
+	volume:float = 1.0;
+	file_path:string;
+	number:int32 = 0;
+	fade:float = 0.0;
+	pan:float = 0.0;
+	frpan:float = 1.0;
+	udpan:float = 0.0;
+	panfade:float = 0.0;
+	field_8:uint32 = 0; // not found
+	field_9:uint32 = 0; // not found
+	play_lip_sync_anim:bool = true;
+}
+
+table POST_ANIM_MESSAGE {
+	message:uint32 = 0;
+}
 
 table POST_ANIM_MESSAGE_TO_ARMEDFORM_WEAPON {
-	message:uint32;
+	message:uint32 = 0;
 	weapon_0:bool = true;
 	weapon_1:bool = true;
 	weapon_2:bool = true;
@@ -1234,11 +1295,51 @@ table POST_ANIM_MESSAGE_TO_ARMEDFORM_WEAPON {
 	weapon_12:bool = true;
 }
 
-table POST_ANIM_MESSAGE_TO_ATTACHED_OBEJCT {}
-table POST_ANIM_MESSAGE_TO_WEAPON {}
-table PUSH_COLLISION_STATE {}
-table QTE_DURATION {}
-table RANDOM_FLOATING_MOVE {}
+table POST_ANIM_MESSAGE_TO_ATTACHED_OBEJCT {
+	message:uint32 = 0;
+}
+
+enum WEAPON_SIDE_OPTIONS : uint32 {
+	RIGHT_ARM = 0x0,
+	LEFT_ARM = 0x1,
+	BOTH_SIDE = 0x2,
+}
+
+table POST_ANIM_MESSAGE_TO_WEAPON {
+	message:uint32 = 0;
+	send_side:WEAPON_SIDE_OPTIONS = RIGHT_ARM;
+}
+
+table PUSH_COLLISION_STATE {
+	group:uint32 = 0;
+	group2:uint32 = 0;
+	group3:uint32 = 0;
+	group4:uint32 = 0;
+	enable:boolo = true;
+}
+
+
+table QTE_DURATION {
+	remote_event_id:uint32 = 0;
+	message:uint32 = 0;
+	executer:PLAYER_CHARACTER = MYSELF;
+}
+
+table RANDOM_FLOATING_MOVE {
+	horizontal_speed:float = 1.0;
+	horizontal_acceleration:float = 1.0;
+	horizontal_deceleration:float = 1.0;
+	vertical_speed:float = 1.0;
+	min_height:float = 1.0;
+	max_height:float = 1.0;
+	vertical_acceleration:float = 1.0;
+	vertical_deceleration:float = 1.0;
+	apply_base_scale:bool = true;
+	min_keep_dist_x_z:float = -1.0;
+	max_keep_dist_x_z:float = -1.0;
+}
+
+// TODO: (08/21/2026) - Continue from here
 table RANGE_ATTACK_TRIGER {}
 table RANGE_FADE {}
 table RANGE_MOVE_MODE_SET {}
